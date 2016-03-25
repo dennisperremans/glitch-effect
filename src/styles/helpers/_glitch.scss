@@ -1,0 +1,36 @@
+.glitch {
+    position: relative;
+    display: inline;
+
+    &:after,
+    &:before {
+        content: attr(data-text);
+        position: absolute;
+        left: 2px;
+        top: 0;
+        height: 100%;
+
+        text-shadow: -4px 0 red;
+        color: #FFF;
+        background: #000;
+
+        overflow: hidden;
+        clip: rect(0, 900px, 0, 0);
+    }
+
+    &:before {
+        left: -2px;
+
+        text-shadow: 2px 0 blue;
+    }
+
+    &:hover {
+        &:after {
+            animation: noise-anim 2s infinite linear alternate-reverse;
+        }
+
+        &:before {
+            animation: noise-anim-2 3s infinite linear alternate-reverse;
+        }
+    }
+}

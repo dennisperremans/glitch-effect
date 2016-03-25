@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Colors
+
+   This file is exclusively intended for setting up variables
+   Never add styles directly to this file
+   ========================================================================== */
+
+/* Greyscale
+   ========================================================================== */
+$black:                   #000000;
+$black--light:            #1C1919;
+$black--lighter:          #24201F;
+
+$white:                   #FFFFFF;
+
+$grey:                    #9F9A9A;
+$grey--darker:            #606060;
+$grey--dark:              #7C7C7C;
+$grey--light:             #F6F2F2;
+$grey--lighter:           #E6E6E6;
+
+/* Brand colors
+   ========================================================================== */
+$primary-color:			  #EB0F81;
+$secondary-color:		  #E31D84;
+$pink:                    #FFAAD6;
+$blue:                    #32ADE4;
+$magenta:                 #C24385;
+
+
+/* Social media colors
+   ========================================================================== */
+$linkedin:                #0077B5;
+$twitter:                 #55ACEE;
+$facebook:                #3b5998;
+$youtube:                 #E52D27;
+
+
+/* Specifics
+   ========================================================================== */
+$text-color:              $black;
+$hr-color:                $grey--light;
+$border-color:            $grey;

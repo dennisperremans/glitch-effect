@@ -1,0 +1,7 @@
+.primary-header {
+    padding: 1rem 0;
+
+    @media (min-width: $screen-sm-min) {
+        padding: 2rem 0;
+    }
+}

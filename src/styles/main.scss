@@ -1,0 +1,31 @@
+@import "base/normalize";
+
+@import "helpers/mixins",
+        "helpers/animations",
+        "helpers/glitch";
+
+@import "vendor/bootstrap-components/bootstrap",
+        "vendor/animate",
+        "vendor/bootstrap-components/bootstrap-vars",
+        "vendor/bootstrap-components/grid",
+        "vendor/bootstrap-components/bootstrap-reset";
+
+@import "components/fontawesome/font-awesome",
+        "components/navigation";
+
+@import "config/colors",
+        "config/sizes",
+        "config/typography/fonts",
+        "config/typography/bodycopy",
+        "config/typography/headings";
+
+@import "general/base";
+@import "general/bodycopy";
+
+@import "layout/header",
+        "layout/footer",
+        "layout/sections";
+
+@import "pages/home";
+
+

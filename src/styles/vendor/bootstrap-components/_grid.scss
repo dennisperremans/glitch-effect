@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Bootstrap grid adjustments
+   ========================================================================== */
+
+/* Container
+   ========================================================================== */
+.container {
+    max-width: $container-large-desktop;
+}
+
+.container--no-padding-md {
+    @media (max-width: $screen-sm-max) {
+        width: 100%;
+        padding: 0 !important;
+
+        .row {
+            margin: 0;
+        }
+    }
+}
+
+.container--big {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1140px;
+}
+
+/* Cols
+   ========================================================================== */
+.col--no-gutter {
+    padding: 0;
+}
