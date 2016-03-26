@@ -72,8 +72,8 @@ $(function(){
             if ($this.attr('data-color')) {
                 $('.cloneOne, .cloneTwo').css('color', $dataColor);
 
-                $('.cloneOne').css('text-shadow', '-2px 0 ' + $rndColor);
-                $('.cloneTwo').css('text-shadow', '2px 0 ' + $rndColor);
+                $('.cloneOne').css('text-shadow', '-5px 0 ' + $rndColor);
+                $('.cloneTwo').css('text-shadow', '5px 0 ' + $rndColor);
             }
         },
         function(e){
