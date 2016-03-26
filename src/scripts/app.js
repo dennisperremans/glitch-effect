@@ -23,9 +23,13 @@ $(function(){
                 $thisOffset = $this.offset(),
                 $thisX = $thisOffset.left,
                 $thisY = $thisOffset.top,
-                $thisColor = $this.css('color');
+                $thisColor = $this.css('color'),
+                $rndColor = 'rgb('+ (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ','+ (Math.floor(Math.random() * 256)) + ')';
 
 
+            /* -----------------------
+            | CLONE THIS
+            ------------------------- */
             // clone element 1 and position it
             if(!$('.cloneOne').length) {
                 var $cloneOne = $this.clone().addClass('clone cloneOne');
@@ -35,7 +39,7 @@ $(function(){
                     top: $thisY
                 });
             }
-
+    
             // clone element 2 and position it
             if(!$('.cloneTwo').length) {
                 var $cloneTwo = $this.clone().addClass('clone cloneTwo');
@@ -46,6 +50,10 @@ $(function(){
                 });
             }
 
+
+            /* -----------------------
+            | SET THE DATA ATTRIBUTES
+            ------------------------- */
             // copy text into data-color
             if ( $this.not('[data-color]') ) {
                 $this.attr('data-color', $dataColor);
@@ -56,14 +64,17 @@ $(function(){
                 $this.attr('data-text', $innerText);
             }
 
+            /* -----------------------
+            | SET THE COLORS
+            ------------------------- */
+
             //set the color on the cloned elements
             if ($this.attr('data-color')) {
                 $('.cloneOne, .cloneTwo').css('color', $dataColor);
 
-                $('.cloneOne').css('text-shadow', '-2px 0 ' + $dataColor);
-                $('.cloneTwo').css('text-shadow', '2px 0 ' + $dataColor);
+                $('.cloneOne').css('text-shadow', '-2px 0 ' + $rndColor);
+                $('.cloneTwo').css('text-shadow', '2px 0 ' + $rndColor);
             }
-
         },
         function(e){
             //remove cloned element onMouseLeave
