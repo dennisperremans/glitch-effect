@@ -1,36 +1,31 @@
 .glitch {
     position: relative;
     display: inline;
+}
 
-    &:after,
-    &:before {
-        content: attr(data-text);
+.clone {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+
+    &.cloneOne,
+    &.cloneTwo {
         position: absolute;
         left: 2px;
         top: 0;
-        height: 100%;
 
-        text-shadow: -4px 0 red;
-        color: #FFF;
+        text-shadow: -2px 0 #FFFFFF;
+        color: #FFFFFF;
         background: #000;
 
         overflow: hidden;
         clip: rect(0, 900px, 0, 0);
+
+        animation: noise-anim 2s infinite linear alternate-reverse;
     }
 
-    &:before {
-        left: -2px;
-
-        text-shadow: 2px 0 blue;
-    }
-
-    &:hover {
-        &:after {
-            animation: noise-anim 2s infinite linear alternate-reverse;
-        }
-
-        &:before {
-            animation: noise-anim-2 3s infinite linear alternate-reverse;
-        }
+    &.cloneTwo {
+        text-shadow: 2px 0 #FFFFFF;
+        animation: noise-anim-2 3s infinite linear alternate-reverse;
     }
 }
