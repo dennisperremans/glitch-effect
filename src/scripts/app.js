@@ -5,6 +5,17 @@ var site = {
     init: function(settings){
         $.extend(this.settings, settings);
     },
+
+    cloneOneElement: function($element) {
+        if(!$('.cloneOne').length) {
+            var $cloneOne = $element.clone().addClass('clone cloneOne');
+            $cloneOne.appendTo('body');
+            $cloneOne.css({
+                left: $thisX,
+                top: $thisY
+            });
+        }
+    }
 };
 
 $(function(){
