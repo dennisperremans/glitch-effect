@@ -3,6 +3,12 @@
 @import "helpers/mixins",
         "helpers/animations",
         "helpers/glitch";
+        
+@import "config/colors",
+        "config/sizes",
+        "config/typography/fonts",
+        "config/typography/bodycopy",
+        "config/typography/headings";
 
 @import "vendor/bootstrap-components/bootstrap",
         "vendor/animate",
@@ -12,12 +18,6 @@
 
 @import "components/fontawesome/font-awesome",
         "components/navigation";
-
-@import "config/colors",
-        "config/sizes",
-        "config/typography/fonts",
-        "config/typography/bodycopy",
-        "config/typography/headings";
 
 @import "general/base";
 @import "general/bodycopy";

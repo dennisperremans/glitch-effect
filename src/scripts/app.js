@@ -16,12 +16,14 @@ $(function(){
         function(e){
             var $this = $(this),
                 $innerText = $this.text(),
-                $dataColor = $this.data('color'),
+                $thisColor = $this.css('color'),
+                $dataColor = $thisColor,
                 $dataBg = $this.data('bg'),
                 $dataAttr = $this.attr('data-text'),
                 $thisOffset = $this.offset(),
                 $thisX = $thisOffset.left,
-                $thisY = $thisOffset.top;
+                $thisY = $thisOffset.top,
+                $thisColor = $this.css('color');
 
 
             // clone element 1 and position it
@@ -44,15 +46,24 @@ $(function(){
                 });
             }
 
-            //set the color on the cloned elements
-            if ($this.attr('data-color')) {
-                $('.cloneOne, .cloneTwo').css('color', $dataColor)
+            // copy text into data-color
+            if ( $this.not('[data-color]') ) {
+                $this.attr('data-color', $dataColor);
             }
 
             // copy text into data-text
             if ( $this.not('[data-text]') ) {
                 $this.attr('data-text', $innerText);
             }
+
+            //set the color on the cloned elements
+            if ($this.attr('data-color')) {
+                $('.cloneOne, .cloneTwo').css('color', $dataColor);
+
+                $('.cloneOne').css('text-shadow', '-2px 0 ' + $dataColor);
+                $('.cloneTwo').css('text-shadow', '2px 0 ' + $dataColor);
+            }
+
         },
         function(e){
             //remove cloned element onMouseLeave
