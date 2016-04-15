@@ -6,32 +6,22 @@ var site = {
         $.extend(this.settings, settings);
     },
 
-    cloneOneElement: function($element) {
-        if(!$('.cloneOne').length) {
-            var $thisX = $element.offset().left,
-                $thisY = $element.offset().top,
-                $cloneOne = $element.clone().addClass('clone cloneOne');
+    cloneElement: function($element) {
+        var elements = ['One', 'Two', 'Three', 'Four'];
 
-            $cloneOne.appendTo('body');
-            $cloneOne.css({
-                left: $thisX,
-                top: $thisY
-            });
-        }
-    },
+        $.each(elements, function(index, value) {
+            if(!$('.clone' + value).length) {
+                var $thisX = $element.offset().left,
+                    $thisY = $element.offset().top,
+                    $clonedElement = $element.clone().addClass('clone clone' + value);
 
-    cloneTwoElement: function($element) {
-        if(!$('.cloneTwo').length) {
-            var $thisX = $element.offset().left,
-                $thisY = $element.offset().top,
-                $cloneTwo = $element.clone().addClass('clone cloneTwo');
-
-            $cloneTwo.appendTo('body');
-            $cloneTwo.css({
-                left: $thisX,
-                top: $thisY
-            });
-        }
+                $clonedElement.appendTo('body');
+                $clonedElement.css({
+                    left: $thisX,
+                    top: $thisY
+                });
+            }
+        });
     },
 };
 
@@ -41,11 +31,9 @@ $(function(){
     });
 
     $(".glitch").hover(
-        function(e){
+        function(){
             var $this = $(this),
                 $innerText = $this.text(),
-                $thisColor = $this.css('color'),
-                $dataAttr = $this.attr('data-text'),
                 $thisColor = $this.css('color'),
                 $rndColor = 'rgb('+ (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ','+ (Math.floor(Math.random() * 256)) + ')';
 
@@ -53,9 +41,7 @@ $(function(){
             /* -----------------------
             | CLONE ELEMENTS
             ------------------------- */
-            site.cloneOneElement($this);
-            site.cloneTwoElement($this);
-
+            site.cloneElement($this);
 
             /* -----------------------
             | SET THE DATA ATTRIBUTES
@@ -77,13 +63,13 @@ $(function(){
 
             //set the color on the cloned elements
             if ($this.attr('data-color')) {
-                $('.cloneOne, .cloneTwo').css('color', $thisColor);
+                $('.clone').css('color', $thisColor);
 
-                $('.cloneOne').css('text-shadow', '-2px 0 ' + $rndColor);
-                $('.cloneTwo').css('text-shadow', '2px 0 ' + $rndColor);
+                $('.clone:nth-child(odd)').css('text-shadow', '-2px 0 ' + $rndColor);
+                $('.clone:nth-child(even)').css('text-shadow', '2px 0 ' + $rndColor);
             }
         },
-        function(e){
+        function(){
             //remove cloned element onMouseLeave
             $('.clone').remove();
         }
